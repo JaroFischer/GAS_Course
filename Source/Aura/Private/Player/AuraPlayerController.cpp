@@ -2,15 +2,23 @@
 
 
 #include "Player/AuraPlayerController.h"
-
-
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "Interaction/TargetInterface.h"
+#include "Kismet/KismetMathLibrary.h"
 
 AAuraPlayerController::AAuraPlayerController()
 {
 	bReplicates = true;
+
 }
+
+void AAuraPlayerController::PlayerTick(float DeltaTime)
+{
+	Super::PlayerTick(DeltaTime);
+
+}
+
 void AAuraPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -18,14 +26,7 @@ void AAuraPlayerController::BeginPlay()
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 	check(Subsystem);
 	Subsystem->AddMappingContext(AuraContext, 0);
-	/**
-	bShowMouseCursor = true;
-	DefaultMouseCursor = EMouseCursor::Default;
-	FInputModeGameAndUI InputModeData;
-	InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-	InputModeData.SetHideCursorDuringCapture(false);
-	SetInputMode(InputModeData);
-    */
+
 }
 
 void AAuraPlayerController::SetupInputComponent()
@@ -37,6 +38,7 @@ void AAuraPlayerController::SetupInputComponent()
 	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Move);
 	EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Look);
 }
+
 
 void AAuraPlayerController::Move(const FInputActionValue& InputActionValue)
 {
@@ -65,3 +67,4 @@ void AAuraPlayerController::Look(const FInputActionValue& InputActionValue)
 
 	}
 }
+

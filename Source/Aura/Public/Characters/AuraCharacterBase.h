@@ -13,7 +13,7 @@ class AURA_API AAuraCharacterBase : public ACharacter
 
 public:
 	AAuraCharacterBase();
-
+	virtual void PlayerTick(float DeltaTime);
 protected:
 	virtual void BeginPlay() override;
 

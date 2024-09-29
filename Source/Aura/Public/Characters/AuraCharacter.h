@@ -15,4 +15,16 @@ class AURA_API AAuraCharacter : public AAuraCharacterBase
 	GENERATED_BODY()
 public:
 	AAuraCharacter();
+
+
+protected:
+
+
+private:
+	UPROPERTY(EditAnywhere, Category = "Camera")
+	class USpringArmComponent* CameraArm;
+
+	UPROPERTY(EditAnywhere, Category = "Camera")
+	class UCameraComponent* FollowCamera;
+
 };
