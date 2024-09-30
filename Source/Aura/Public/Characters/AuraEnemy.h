@@ -15,5 +15,6 @@ class AURA_API AAuraEnemy : public AAuraCharacterBase, public ITargetInterface
 {
 	GENERATED_BODY()
 public:
+	AAuraEnemy();
 
 };

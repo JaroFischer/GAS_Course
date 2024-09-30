@@ -13,9 +13,9 @@ AAuraCharacterBase::AAuraCharacterBase()
 	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
-void AAuraCharacterBase::PlayerTick(float DeltaTime)
+UAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const
 {
-
+	return AbilitySystemComponent;
 }
 
 void AAuraCharacterBase::BeginPlay()

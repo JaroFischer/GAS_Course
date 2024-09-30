@@ -3,4 +3,15 @@
 
 #include "Characters/AuraEnemy.h"
 
+#include "AbilitySystem/AuraAttributeSet.h"
+#include "AbilitySystem/AuraAbilitySystemComponent.h"
+#include "Aura/Aura.h"
 
+AAuraEnemy::AAuraEnemy()
+{
+	AbilitySystemComponent = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystemComponent");
+	AbilitySystemComponent->SetIsReplicated(true);
+
+	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
+
+}
