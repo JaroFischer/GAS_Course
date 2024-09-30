@@ -6,6 +6,8 @@
 #include "Characters/AuraCharacterBase.h"
 #include "AuraCharacter.generated.h"
 
+class UAbilitySystemComponent;
+class UAttributeSet;
 /**
  * 
  */
@@ -15,7 +17,6 @@ class AURA_API AAuraCharacter : public AAuraCharacterBase
 	GENERATED_BODY()
 public:
 	AAuraCharacter();
-
 
 protected:
 

@@ -23,5 +23,5 @@ AAuraCharacter::AAuraCharacter()
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>("Camera");
 	FollowCamera->SetupAttachment(CameraArm, USpringArmComponent::SocketName);
-
 }
+
